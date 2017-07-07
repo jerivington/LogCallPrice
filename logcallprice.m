@@ -34,7 +34,7 @@ function price = logcallprice(underlying, strike, rate, time, stdv, simulations)
 
 dt=1/365;
 
-steps = round(365*time,1);
+steps = round(time/dt,1);
 
 db=dt^0.5;
 
