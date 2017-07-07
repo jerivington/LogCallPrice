@@ -9,7 +9,7 @@
 % and compares this to the analytical price. It then shows the convergence
 % of the two solutions for increasing Monte Carlo Simulations then performs
 % a random parameter test where random parameters are selected and the 
-% magnitude of error isrecorded. This is done 100 times and the error 
+% magnitude of error is recorded. This is done 100 times and the error 
 % plotted onto a histogram.
 
 tic % start timer
