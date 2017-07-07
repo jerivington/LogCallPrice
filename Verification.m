@@ -111,19 +111,22 @@ pause(realmin)
 
 % Plotting Convergence of Monte Carlo to Analytical for Increasing N
 
-index=1;
-storage=zeros(1,length(100:250:2*10^4));
+index=1; % Storage index
+storage=zeros(1,length(100:250:2*10^4)); % Predeclaring for efficiency
 
 a=V(s,k,r,t,st); % predeclaring analytical value for efficiency
 
 for i = 100:250:2*10^4
     
+   % Storing absolute difference between analytical and MC.
    storage(1,index)=abs(a-logcallprice(s,k,r,t,st,i));
    
+   % Incrementing storage index
    index = index+1;
     
 end
 
+% Plotting N value vs absolute difference
 figure(3)
 subplot(2,2,3)
 plot(100:250:2*10^4,storage(1,:));
@@ -138,12 +141,15 @@ storage=zeros(1,100);
 
 for i = 1 : 100
     
+   % Defining random variables to use in both analytical and MC.
    s1=500*rand+1; e1=500*rand+1; r1=rand/10; t1=rand; st1=rand;
    
+   % Storing absolute difference between analytical and MC.
    storage(1,i)=abs(V(s1,e1,r1,t1,st1)-logcallprice(s1,e1,r1,t1,st1,n));
    
 end
 
+% Plotting histogram of absolute difference frequencies
 figure(3)
 subplot(2,2,4)
 histogram(storage,'BinWidth',0.0001)
