@@ -32,7 +32,7 @@ function price = logcallprice(underlying, strike, rate, time, stdv, simulations)
 % Output:
 % Price of the option today.
 
-dt=1/365;
+dt=1/365; % smaller time step = more precison & slower computation
 
 steps = round(time/dt,1);
 
@@ -46,8 +46,6 @@ for i = 1 : simulations
     
     % Assigning/ overwriting previous timestep and current timestep
     % variables
-    
-    olds=0;
     
     news=underlying;
     
