@@ -152,7 +152,7 @@ end
 % Plotting histogram of absolute difference frequencies
 figure(3)
 subplot(2,2,4)
-histogram(storage,'BinWidth',0.0001)
+histogram(storage,'BinWidth',median(storage))
 title('Random Parameter Test')
 xlabel('Magnitude of Error')
 ylabel('Frequency /100')
