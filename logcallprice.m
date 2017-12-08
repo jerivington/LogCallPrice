@@ -32,9 +32,10 @@ function price = logcallprice(underlying, strike, rate, time, stdv, simulations)
 % Output:
 % Price of the option today.
 
-dt=1/365; % smaller time step = more precison & slower computation
 
-steps = round(time/dt,1);
+steps = 1000;
+
+dt=time/steps;
 
 db=dt^0.5;
 
@@ -54,8 +55,6 @@ for i = 1 : simulations
     for j = 1:steps
         
         % Applying Euler method
-        
-        olds = news;
         
         news=olds*(1+rate*dt+stdv*db*randn);
         
